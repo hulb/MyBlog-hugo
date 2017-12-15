@@ -7,7 +7,7 @@ tags: ["preview", "Theme preview"]
 categories: ["Theme preview"]
 author: '<a href="https://laozhu.me" rel="noopener" target="_blank">米老朱</a>'
 
-weight: 10
+# weight: 10
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
