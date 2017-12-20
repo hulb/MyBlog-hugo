@@ -18,6 +18,6 @@ deploy:
   on:
     branch: master
   local_dir: ./public
-  repo: git@github.com:hulb/hulb.github.io.git
+  repo: git@github.com:hulb/hulb.github.io
   email: hulb@live.cn
   target_branch: master
