@@ -1,0 +1,21 @@
+langguage: go
+
+go:
+  - master
+
+before_install:
+  - go get -v github.com/gohugoio/hugo
+
+script:
+  - hugo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: ./public
+  repo: git@github.com:hulb/hulb.github.io.git
+  email: hulb@live.cn
+  target_branch: master

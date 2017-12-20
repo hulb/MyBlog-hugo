@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://hulb.github.io"
 languageCode = "zh-CN"
 defaultContentLanguage = "en"
 title = "Winterfall - Here I record my experience"
