@@ -21,3 +21,4 @@ deploy:
   repo: git@github.com:hulb/hulb.github.io
   email: hulb@live.cn
   target_branch: master
+  github_url: 
