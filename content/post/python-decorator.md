@@ -21,6 +21,7 @@ mathjax: false
 ---
 python装饰器这个东西用得好能给代码结构带来很大的方便，之前一直是用到就翻翻资料，今天做一个总结。
 
+<!--more-->
 在python中任何东西都是一个对象，包括function。这是装饰器的基础。因为function是一个对象，所以我们可以把一个function当作参数，或者把function当作返回值。于是我们可以在一个function中返回另一个function,借此实现一些特别的功能。比如下面：
 
 ```python
@@ -257,4 +258,3 @@ def printA(value):
 ArgSpec(args=[], varargs='args', keywords='xargs', defaults=None)
 ```
 可以看到，这里被装饰器装饰过后，方法的参数列表发生了变化。在需要用到方法的参数列表做一些判断的时候，这里就要小心了；如果一个方法是经过装饰器装饰过的，那么你取到的参数列表可能有问题。那么如何解决呢？这就需要用到python的[decorator库](http://decorator.readthedocs.io/en/latest/tests.documentation.html)。
-<!--more-->

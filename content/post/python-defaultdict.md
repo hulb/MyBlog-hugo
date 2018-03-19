@@ -21,6 +21,7 @@ mathjax: false
 ---
 在看代码的时候，发现用到一个collections.defaultdic类，以前接触得不多，查了查资料自己体验了一下，做个记录。
 
+<!--more-->
 [defaultdict](https://docs.python.org/2/library/collections.html#collections.defaultdict)类是dict的子类，返回一个类字典的对象。可以看作一个带有指定默认值的字典。一个典型的用法是给某个字典中不存在的key赋默认值，如：
 ```python
 s = [('a', 1), ('b', 2), ('a', 3)]
@@ -61,4 +62,3 @@ for k in b:
 >>> d.items()
 [('a', 101), ('c', 101), ('b', 101), ('d', 101)]
 ```
-<!--more-->

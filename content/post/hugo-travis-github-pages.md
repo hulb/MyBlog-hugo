@@ -23,6 +23,7 @@ mathjax: false
 
 在网络上搜索了一下，发现可以借助一些CI/CD工具来帮助我完成这件事。CI/CD全程Continuous Integration and Delivery，中文翻译过来就是持续集成和交付。原理是借助git的hook功能，监控git仓库的提交，然后触发自动构建，自动部署。
 
+<!--more-->
 其中，travis.io是在线的用的比较多的一个CI/CD工具，而且可以免费使用。使用方法还算简单，就是在项目根目录创建一个.travis.yml文件，文件中按照其语法，声明项目运行的环境和构建脚本。
 以下是我的博客的构建脚本
 <pre><code>
@@ -55,4 +56,3 @@ mathjax: false
 
 接下来设置部署的命令，就是deploy这一节。根据[travis有关github pages的文档](https://docs.travis-ci.com/user/deployment/pages/)填入一些配置，这里有个坑，repo只用写你的github用户名/项目名就行了，不用写完成的git clone的地址，一直在这个地方搞错了好几次。
 然后就是推送一个更新到博客源文件仓库，触发自动构建和部署。
-<!--more-->
