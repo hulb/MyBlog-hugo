@@ -20,6 +20,7 @@ reward: false
 mathjax: false
 ---
 记录下python读取excel的做法。
+
 <!--more-->
 python读取excel可以用[xlrd这个库](https://github.com/python-excel/xlrd)，使用起来还算简单。
 ```python

@@ -20,6 +20,7 @@ reward: false
 mathjax: false
 ---
 关于python metaclass 也就是元类的一点体会。
+
 <!--more-->
 网络上说python metaclass的文章很多，感觉[这一篇](http://blog.jobbole.com/21351/)看了以后还是能比较清楚对元类有一个理解。下面谈谈自己的一些体会。
 
