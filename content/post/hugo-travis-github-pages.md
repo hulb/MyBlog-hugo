@@ -20,10 +20,10 @@ reward: false
 mathjax: false
 ---
 博客搭建好后，一个重要的问题就是每次有新写的md文件难道要手动执行hugo，然后将public文件夹推送到github pages仓库？显然这不是我想要的。
-
-在网络上搜索了一下，发现可以借助一些CI/CD工具来帮助我完成这件事。CI/CD全程Continuous Integration and Delivery，中文翻译过来就是持续集成和交付。原理是借助git的hook功能，监控git仓库的提交，然后触发自动构建，自动部署。
-
 <!--more-->
+
+在网络上搜索了一下，发现可以借助一些CI/CD工具来帮助我完成这件事。CI/CD全称Continuous Integration and Delivery，中文翻译过来就是持续集成和交付。原理是借助git的hook功能，监控git仓库的提交，然后触发自动构建，自动部署。
+
 其中，travis.io是在线的用的比较多的一个CI/CD工具，而且可以免费使用。使用方法还算简单，就是在项目根目录创建一个.travis.yml文件，文件中按照其语法，声明项目运行的环境和构建脚本。
 以下是我的博客的构建脚本
 <pre><code>
