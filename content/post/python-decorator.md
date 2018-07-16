@@ -1,7 +1,7 @@
 ---
 title: "说说Python Decorator"
 date: 2018-03-17T11:12:24+08:00
-lastmod: 2018-03-17T11:12:24+08:00
+lastmod: 2018-07-17T07:50:00+08:00
 draft: false
 keywords: ["python","decorator"]
 description: ""
@@ -258,3 +258,43 @@ def printA(value):
 ArgSpec(args=[], varargs='args', keywords='xargs', defaults=None)
 ```
 可以看到，这里被装饰器装饰过后，方法的参数列表发生了变化。在需要用到方法的参数列表做一些判断的时候，这里就要小心了；如果一个方法是经过装饰器装饰过的，那么你取到的参数列表可能有问题。那么如何解决呢？这就需要用到python的[decorator库](http://decorator.readthedocs.io/en/latest/tests.documentation.html)。
+
+接着来看decorator库。decorate库主要是为了解决在使用装饰器的过程中，方法签名发生变化的问题。一个很典型的例子是在odoo的openerp/api.py中，许多装饰器例如@api.one, @api.model, @api.multi等都会先获取一些被装饰方法的参数列表，以此来做一层api转换。
+
+最近在做一些性能优化的工作，要加一段profile装饰器的代码，来给需要的方法做性能评估。比较好的方式是加到openerp/api.py中，这时就遇到上面说的问题，即如何在使用装饰器的时候保证被装饰方法的签名，这样在使用多个装饰器时不受影响。
+
+直接看代码：
+
+```python
+from decorator import decorator
+from pyinstrument import Profiler
+from cProfile import Profile
+def do_profile(profiler_type='pyinstrument', save=False):
+    def _decorate(func):
+            def wrapper(func, *args, **xargs):
+                if profiler_type == 'pyinstrument':
+                    profiler = Profiler()
+                    profiler.start()
+                elif profiler_type == 'cprofile':
+                    profiler = Profile()
+                    profiler.enable()
+                res = func(*args, **xargs)
+                if profiler_type == 'pyinstrument':
+                    profiler.stop()
+                    print(profiler.output_text(unicode=True, color=True))
+
+                elif profiler_type == 'cprofile':
+                    profiler.disable()
+                    profiler.print_stats(sort=2)
+
+                return res
+
+            return decorator(wrapper, func)
+
+        return _decorate
+
+```
+
+这里用到带参数的装饰器，可以在使用的时候选择profiler。顺带提一下,cProfile对程序执行的效率影响比较大，pyinstrument这个profiler对程序执行影响较小，其结果展示也比较直观。
+
+最核心的就是用到了decorator.decorator。它提供了一种非常简单的方式，将一个装饰器包装为一个保留被装饰方法签名的装饰器。一般在_decorate方法返回时，会直接return wrapper，这时这个wrapper与被装饰方法func相比，就丢失了func原本的方法签名。这是使用decorator(wrapper, func)就能轻松解决。注意，wrapper方法的定义需要做微调，即第一个参数为被装饰的func。
