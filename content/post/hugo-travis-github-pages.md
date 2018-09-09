@@ -26,7 +26,7 @@ mathjax: false
 
 其中，travis.io是在线的用的比较多的一个CI/CD工具，而且可以免费使用。使用方法还算简单，就是在项目根目录创建一个.travis.yml文件，文件中按照其语法，声明项目运行的环境和构建脚本。
 以下是我的博客的构建脚本
-<pre><code>
+```
   langguage: go
 
   go:
@@ -49,7 +49,7 @@ mathjax: false
     repo: hulb/hulb.github.io
     email: hulb@live.cn
     target_branch: master
-</code></pre>
+```
 以上是表示使用go的运行环境，go版本选择为master版本，这是从[travis文档](https://docs.travis-ci.com/user/languages/go/ "travis文档")学习来的。
 
 使用travis我们可以自动对Push到博客仓库的md文件执行hugo，生成public文件夹，那么如何把这个文件夹推送到对应的pages仓库呢？这就需要用到github的access token。在github的setting->developer setting中有一个personal access token，根据travis文档教程生成一个新的access token，填入travis环境变量里，然后我们在.travis.yml中就可以用到，就如上面的@GITHUB_TOKEN。
