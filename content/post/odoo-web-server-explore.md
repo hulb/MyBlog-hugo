@@ -2,7 +2,7 @@
 title: "Odoo Web Server初探"
 date: 2018-09-09T16:23:58+08:00
 lastmod: 2018-09-09T16:23:58+08:00
-draft: true
+draft: false
 keywords: ["odoo", "python", "web server", "wsgi"]
 description: ""
 tags: ["python", "web", "odoo", "wsgi"]
