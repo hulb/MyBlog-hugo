@@ -1,7 +1,6 @@
-FROM golang AS build
-ADD . /hugo
+FROM hulb/docker-hugo AS build
 WORKDIR /hugo
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.tar.gz && tar -zxf hugo_0.55.6_Linux-64bit.tar.gz && chmod a+x hugo
+ADD . /hugo
 RUN mkdir /blog
 RUN ./hugo -d /blog
 
