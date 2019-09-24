@@ -37,6 +37,6 @@ FROM nginx:alpine
 COPY --from=build /blog /usr/share/nginx/html
 ```
 
-为了构建时比较快，以及hugo版本稳定，我自己打了一个固定版本的hugo镜像。采用分阶段构建的方式，使用nginx镜像来跑镜像站点。然后docker hub也是可以设置web hook的，我写了一个简单的程序开放一个api，跑在vps上供docker 镜像构建好后调用。在程序中如果收到docker hub的web hook通知，我就去更新vps上的博客镜像并重启。这算是一个简单的CI/CD场景吧。其实也类似与IFTTT，将不同的web service或API通过一定的方式连接起来行程workflow。
+为了构建时比较快，以及hugo版本稳定，我自己打了一个固定版本的hugo镜像。采用分阶段构建的方式，使用nginx镜像来跑镜像站点。然后docker hub也是可以设置web hook的，我写了一个简单的程序开放一个api，跑在vps上供docker 镜像构建好后调用。在程序中如果收到docker hub的web hook通知，我就去更新vps上的博客镜像并重启。这算是一个简单的CI/CD场景吧。其实也类似与IFTTT，将不同的web service或API通过一定的方式连接起来组成workflow。
 
 如果实施具体的商业项目，应该还要有更多诸如降级，灰度等方面的考虑。
