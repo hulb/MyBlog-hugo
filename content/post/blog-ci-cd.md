@@ -2,7 +2,7 @@
 title: "博客的CI/CD方案"
 date: 2019-09-24T22:09:23+08:00
 lastmod: 2019-09-24T22:09:23+08:00
-draft: true
+draft: false
 keywords: ["CI","CD", "docker", "webhook"]
 description: ""
 tags: ["CI","CD"]
