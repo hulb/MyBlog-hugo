@@ -25,21 +25,19 @@ mathjax: false
 在mysql中我们可以将给一个列定义auto_increment属性，用来实现自增id，但是在postgresql中并不支持这个属性。在postgresql中的要实现列自增有两种方式：
 
 1. 创建将一个列声明为serial:
-    ```SQL
+```SQL
     Create table test(
-
-    Id not null serial
-
+        Id not null serial
     );
-    ```
+```
 
 2. 创建一个序列，然后这个自增列的默认值从序列生成:
-    ```SQL
+```SQL
     Create sequence seq_test_id;
     Create table test(
-    Id not null default nextval('seq_test_id')
+        Id not null default nextval('seq_test_id')
     );
-    ```
+```
 
 这两种方式是实现的效果是相同的的，见官方文档：https://www.postgresql.org/docs/8.1/static/datatype.html#DATATYPE-SERIAL
 
