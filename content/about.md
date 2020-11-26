@@ -10,15 +10,12 @@ comment: false
 mathjax: false
 ---
 
-Hugo is a static site engine written in Go.
+I'm hulb in Shanghai China. And I'm trying to become a good engineer. 
 
+But sometimes I feel bored about coding also.
 
-It makes use of a variety of open source projects including:
+Life is short, what's the most important? 
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
-
+- develop with golang, python
+- handful experience for web backend development
+- intereted in many: iot, activitypub, telegram bot, rss...

@@ -1,0 +1,70 @@
+baseURL: "https://hulb.github.io"
+title: Winterfall
+paginate: 10
+theme: hugo-PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    title: Winterfall
+    description: "Winterfall - Here I write some notes and thoughts"
+    author: hulb
+    # author: ["Me", "You"] # multiple authors
+
+    images: "https://avatars2.githubusercontent.com/u/7296536"
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    comments: true
+    defaultTheme: dark
+    disableThemeToggle: false
+    disableSpecial1stPost: false
+
+    assets:
+        favicon: "<link / abs url>"
+        favicon16x16: "<link / abs url>"
+        favicon32x32: "<link / abs url>"
+        apple_touch_icon: "<link / abs url>"
+        safari_pinned_tab: "<link / abs url>"
+
+    label:
+        text: "Winterfall"
+        # icon: /apple-touch-icon.png
+        # iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: false # needs to be explicitly set
+        title: Here I write some notes and thoughts
+        # imageUrl: '<img location>'
+        # imageTitle: my image
+        buttons:
+            - name: Archives
+              url: "/archive"
+            - name: Tags
+              url: tags
+
+    # home-info mode
+    homeInfoParams:
+        Title: "Hi there \U0001F44B"
+        Content: Welcome to my blog
+
+    socialIcons:
+        - name: telegram
+          url: "https://t.me/hulb4tg"
+        - name: github
+          url: "https://github.com/hulb"
+
+    analytics:
+        google:
+            SiteVerificationTag: "XYZabc"
