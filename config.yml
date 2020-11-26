@@ -1,4 +1,4 @@
-baseURL: "https://hulb.github.io"
+baseURL: "https://blog.hulb.club"
 title: Winterfall
 paginate: 10
 theme: hugo-PaperMod
